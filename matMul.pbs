@@ -1,0 +1,100 @@
+#!/bin/bash
+# Job hello
+#PBS -N hello
+# Output files
+#PBS -o ./hello.o
+#PBS -e ./hello.e
+# Queue name
+#PBS -q short_cpuQ
+# Set the maximum wall time
+#PBS -l walltime=0:25:00
+# Number of nodes, cpus, mpi processors and amount of memory
+#PBS -l select=1:ncpus=4:mpiprocs=64:mem=100gb
+
+# Modules for C and MPI
+module load gcc91
+module load mpich-3.2.1--gcc-9.1.0
+
+
+# To check the architecture
+lscpu
+
+# Select the working directory 
+cd /home/oeydis.herland/IPCcluster/testFolder
+
+# the code should be previously compiled
+mpicc matMulPar1.c -o outputfile.out
+# Run the code
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+
+# the code should be previously compiled
+mpicc matMulPar2.c -o outputfile.out
+# Run the code
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+
+# the code should be previously compiled
+mpicc matMulBlcokPar.c -o outputfile.out
+# Run the code
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 1 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 2 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 4 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 8 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 16 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 32 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+mpiexec -np 64 ./outputfile.out
+
+
