@@ -1,9 +1,9 @@
 #!/bin/bash
-# Job hello
-#PBS -N hello
+# Job matMul
+#PBS -N matMul
 # Output files
-#PBS -o ./hello.o
-#PBS -e ./hello.e
+#PBS -o ./matMul.o
+#PBS -e ./matMul.e
 # Queue name
 #PBS -q short_cpuQ
 # Set the maximum wall time
@@ -26,75 +26,36 @@ cd /home/oeydis.herland/IPCcluster/testFolder
 mpicc matMulPar1.c -o outputfile.out
 # Run the code
 mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
 mpiexec -np 2 ./outputfile.out
 mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
 mpiexec -np 8 ./outputfile.out
 mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
 mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
 mpiexec -np 64 ./outputfile.out
 
 # the code should be previously compiled
 mpicc matMulPar2.c -o outputfile.out
 # Run the code
 mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
 mpiexec -np 2 ./outputfile.out
 mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
 mpiexec -np 8 ./outputfile.out
 mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
 mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
 mpiexec -np 64 ./outputfile.out
 
 # the code should be previously compiled
-mpicc matMulBlcokPar.c -o outputfile.out
+mpicc matMulBlockPar.c -o outputfile.out
 # Run the code
 mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 1 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
-mpiexec -np 2 ./outputfile.out
 mpiexec -np 2 ./outputfile.out
 mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 4 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
-mpiexec -np 8 ./outputfile.out
 mpiexec -np 8 ./outputfile.out
 mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
-mpiexec -np 16 ./outputfile.out
 mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 32 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
-mpiexec -np 64 ./outputfile.out
 mpiexec -np 64 ./outputfile.out
 
-
+# the code should be previously compiled
+gcc matMul.c -o outputfile.out
+# Run the code
+./outputfile.out
